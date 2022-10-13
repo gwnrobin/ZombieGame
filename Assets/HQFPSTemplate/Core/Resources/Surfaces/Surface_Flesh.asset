@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a5f455fef6aaad459434bb61682f7d4, type: 3}
+  m_Name: Surface_Flesh
+  m_EditorClassIdentifier: 
+  RegisteredTextures:
+  - {fileID: 2800000, guid: 32e9558b627bef847aa15c1ee17785a8, type: 3}
+  SoftFootstepEffect:
+    AudioEffect:
+      m_Clips:
+        m_List: []
+      m_VolumeRange: {x: 0.5, y: 0.75}
+      m_PitchRange: {x: 0.9, y: 1.1}
+      m_VolumeMultiplier: 1
+    VisualEffect: {fileID: 0}
+  HardFootstepEffect:
+    AudioEffect:
+      m_Clips:
+        m_List: []
+      m_VolumeRange: {x: 0.5, y: 0.75}
+      m_PitchRange: {x: 0.9, y: 1.1}
+      m_VolumeMultiplier: 1
+    VisualEffect: {fileID: 0}
+  FallImpactEffect:
+    AudioEffect:
+      m_Clips:
+        m_List: []
+      m_VolumeRange: {x: 0.5, y: 0.75}
+      m_PitchRange: {x: 0.9, y: 1.1}
+      m_VolumeMultiplier: 1
+    VisualEffect: {fileID: 0}
+  BulletHitEffect:
+    AudioEffect:
+      m_Clips:
+        m_List:
+        - {fileID: 8300000, guid: 94307e998e7f48a48ae591c6897cd674, type: 3}
+      m_VolumeRange: {x: 0.5, y: 0.75}
+      m_PitchRange: {x: 0.9, y: 1.1}
+      m_VolumeMultiplier: 1
+    VisualEffect: {fileID: 1752629456198415169, guid: 88c12ad5c110a7046aede145c6e229fa,
+      type: 3}
+  SlashEffect:
+    AudioEffect:
+      m_Clips:
+        m_List: []
+      m_VolumeRange: {x: 0.5, y: 0.75}
+      m_PitchRange: {x: 0.9, y: 1.1}
+      m_VolumeMultiplier: 1
+    VisualEffect: {fileID: 0}
+  StabEffect:
+    AudioEffect:
+      m_Clips:
+        m_List: []
+      m_VolumeRange: {x: 0.5, y: 0.75}
+      m_PitchRange: {x: 0.9, y: 1.1}
+      m_VolumeMultiplier: 1
+    VisualEffect: {fileID: 0}
