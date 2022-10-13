@@ -55,7 +55,8 @@ MonoBehaviour:
       m_VolumeRange: {x: 0.5, y: 0.75}
       m_PitchRange: {x: 0.9, y: 1.1}
       m_VolumeMultiplier: 1
-    VisualEffect: {fileID: 0}
+    VisualEffect: {fileID: 1752629456198415169, guid: 88c12ad5c110a7046aede145c6e229fa,
+      type: 3}
   StabEffect:
     AudioEffect:
       m_Clips:
@@ -63,4 +64,5 @@ MonoBehaviour:
       m_VolumeRange: {x: 0.5, y: 0.75}
       m_PitchRange: {x: 0.9, y: 1.1}
       m_VolumeMultiplier: 1
-    VisualEffect: {fileID: 0}
+    VisualEffect: {fileID: 1752629456198415169, guid: 88c12ad5c110a7046aede145c6e229fa,
+      type: 3}
