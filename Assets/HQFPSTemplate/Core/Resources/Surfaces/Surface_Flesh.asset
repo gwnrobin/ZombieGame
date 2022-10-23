@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RegisteredTextures:
   - {fileID: 2800000, guid: 32e9558b627bef847aa15c1ee17785a8, type: 3}
+  - {fileID: 2800000, guid: 3fdcda6a0a304824db3535dc4f23140e, type: 3}
+  - {fileID: 2800000, guid: 62725d6d7aab6d047be36a53400af0b5, type: 3}
+  - {fileID: 2800000, guid: 1c95bd3bba54ef94b95abfd4143047ee, type: 3}
+  - {fileID: 2800000, guid: 04fffa6ea81159f4bac1dfd1876c1533, type: 3}
   SoftFootstepEffect:
     AudioEffect:
       m_Clips:
