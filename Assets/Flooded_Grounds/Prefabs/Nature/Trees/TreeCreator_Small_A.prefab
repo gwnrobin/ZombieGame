@@ -171,7 +171,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Diffusion_Profile: 0
+    - Diffusion_Profile: 2.6486764
     - EFFECT_BILLBOARD: 0
     - EFFECT_EXTRA_TEX: 0
     - _AddPrecomputedVelocity: 0
@@ -193,7 +193,7 @@ Material:
     - _DstBlend: 0
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _HueVariationKwToggle: 1
     - _NormalMapKwToggle: 1
     - _OpaqueCullMode: 2
@@ -217,7 +217,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _SubsurfaceScale: 1
+    - _SubsurfaceScale: 2
     - _SupportDecals: 1
     - _SurfaceType: 0
     - _TranslucencyViewDependency: 0.7
@@ -236,7 +236,8 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - Diffusion_Profile_Asset: {r: 0, g: 0, b: 0, a: 0}
+    - Diffusion_Profile_Asset: {r: -3.698545e+22, g: 20.616848, b: -5.291675e-28,
+        a: -1.3520143e+18}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: -1, g: -1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
@@ -318,11 +319,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Diffusion_Profile: 0
+    - Diffusion_Profile: 2.6486764
     - EFFECT_BILLBOARD: 0
     - EFFECT_EXTRA_TEX: 0
     - _AddPrecomputedVelocity: 0
-    - _AlphaClipThreshold: 0.1
+    - _AlphaClipThreshold: 0
     - _AlphaCutoffEnable: 1
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
@@ -339,7 +340,7 @@ Material:
     - _DstBlend: 0
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _HueVariationKwToggle: 1
     - _NormalMapKwToggle: 1
     - _OpaqueCullMode: 2
@@ -361,7 +362,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _SubsurfaceScale: 1
+    - _SubsurfaceScale: 2
     - _SupportDecals: 1
     - _SurfaceType: 0
     - _TransparentBackfaceEnable: 0
@@ -379,7 +380,8 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - Diffusion_Profile_Asset: {r: 0, g: 0, b: 0, a: 0}
+    - Diffusion_Profile_Asset: {r: -3.698545e+22, g: 20.616848, b: -5.291675e-28,
+        a: -1.3520143e+18}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: -1, g: -1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

@@ -13,11 +13,7 @@ MonoBehaviour:
   m_Name: Surface_Flesh
   m_EditorClassIdentifier: 
   RegisteredTextures:
-  - {fileID: 2800000, guid: 32e9558b627bef847aa15c1ee17785a8, type: 3}
-  - {fileID: 2800000, guid: 3fdcda6a0a304824db3535dc4f23140e, type: 3}
-  - {fileID: 2800000, guid: 62725d6d7aab6d047be36a53400af0b5, type: 3}
-  - {fileID: 2800000, guid: 1c95bd3bba54ef94b95abfd4143047ee, type: 3}
-  - {fileID: 2800000, guid: 04fffa6ea81159f4bac1dfd1876c1533, type: 3}
+  - {fileID: 2800000, guid: f6b402f7abbdf8e42926a46709058155, type: 3}
   SoftFootstepEffect:
     AudioEffect:
       m_Clips:
@@ -45,8 +41,7 @@ MonoBehaviour:
   BulletHitEffect:
     AudioEffect:
       m_Clips:
-        m_List:
-        - {fileID: 8300000, guid: 94307e998e7f48a48ae591c6897cd674, type: 3}
+        m_List: []
       m_VolumeRange: {x: 0.5, y: 0.75}
       m_PitchRange: {x: 0.9, y: 1.1}
       m_VolumeMultiplier: 1
@@ -55,7 +50,10 @@ MonoBehaviour:
   SlashEffect:
     AudioEffect:
       m_Clips:
-        m_List: []
+        m_List:
+        - {fileID: 8300000, guid: 74853d8e99cd61e49bfc322a2d271e5d, type: 3}
+        - {fileID: 8300000, guid: 8af565d19cbddbe40bc2303ba90501e8, type: 3}
+        - {fileID: 8300000, guid: b62a8165fe63c2f42a4994fce9509c25, type: 3}
       m_VolumeRange: {x: 0.5, y: 0.75}
       m_PitchRange: {x: 0.9, y: 1.1}
       m_VolumeMultiplier: 1
@@ -64,7 +62,10 @@ MonoBehaviour:
   StabEffect:
     AudioEffect:
       m_Clips:
-        m_List: []
+        m_List:
+        - {fileID: 8300000, guid: 74853d8e99cd61e49bfc322a2d271e5d, type: 3}
+        - {fileID: 8300000, guid: 8af565d19cbddbe40bc2303ba90501e8, type: 3}
+        - {fileID: 8300000, guid: b62a8165fe63c2f42a4994fce9509c25, type: 3}
       m_VolumeRange: {x: 0.5, y: 0.75}
       m_PitchRange: {x: 0.9, y: 1.1}
       m_VolumeMultiplier: 1

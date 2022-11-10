@@ -5,13 +5,14 @@ using UnityEngine.VFX;
 
 public class GetFloorDistance : MonoBehaviour
 {
+    public LayerMask mask = new LayerMask();
     [SerializeField]
     private VisualEffect visual;
 
     void Start()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -Vector3.up, out hit, Mathf.Infinity))
+        if (Physics.Raycast(transform.position, -Vector3.up, out hit, Mathf.Infinity, mask))
         {
             float distanceToGround = hit.distance;
             visual.SetFloat("DistanceToGround", distanceToGround);

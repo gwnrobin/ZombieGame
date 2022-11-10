@@ -6,7 +6,7 @@ using UnityEngine;
 public class ZombieAudio : ZombieComponent
 {
 	[Serializable]
-	private struct PlayerVitalsAudio
+	private struct ZombieVitalsAudio
 	{
 		[BHeader("Health", true)]
 
@@ -35,17 +35,10 @@ public class ZombieAudio : ZombieComponent
 
 		[Group]
 		public SoundPlayer DeathAudio;
-
-		[BHeader("Stamina", true)]
-
-		[Group]
-		public SoundPlayer BreathingHeavyAudio;
-
-		public float BreathingHeavyDuration;
 	}
 
 	[Serializable]
-	private struct PlayerFootstepsAudio
+	private struct ZombieFootstepsAudio
 	{
 		public LayerMask GroundMask;
 
@@ -69,30 +62,43 @@ public class ZombieAudio : ZombieComponent
 		public float RunVolume;
 	}
 
+	[Serializable]
+	private struct ZombieScreamAudio
+    {
+		[BHeader("Scream", false)]
+
+		[Group]
+		[Tooltip("The sounds that will be played when this entity receives damage.")]
+		public SoundPlayer ScreamAudio;
+
+		[SerializeField]
+		public float TimeBetweenScreams;
+	}
+
 	[SerializeField]
 	private AudioSource m_AudioSource = null;
 
 	[SerializeField, Group]
-	private PlayerVitalsAudio m_PlayerVitalsAudio = new PlayerVitalsAudio();
+	private ZombieVitalsAudio m_ZombieVitalsAudio = new ZombieVitalsAudio();
 
 	[SerializeField, Group]
-	private PlayerFootstepsAudio m_PlayerFootsteps = new PlayerFootstepsAudio();
+	private ZombieFootstepsAudio m_ZombieFootsteps = new ZombieFootstepsAudio();
+
+	[SerializeField, Group]
+	private ZombieScreamAudio m_ZombieScreams = new ZombieScreamAudio();
 
 	private float m_NextTimeCanScream;
+	private float m_NextTimeCanScreamAngry;
 
 	private void Start()
 	{
-		//zombie.MoveCycleEnded.AddListener(PlayFootstep);
+		zombie.MoveCycleEnded.AddListener(PlayFootstep);
 
-		zombie.Death.AddListener(() => { m_PlayerVitalsAudio.DeathAudio.Play(m_AudioSource); });
+		zombie.Death.AddListener(() => { m_ZombieVitalsAudio.DeathAudio.Play(m_AudioSource); });
 
 		zombie.Health.AddChangeListener(OnChanged_Health);
 
-	}
-
-	private void Update()
-	{
-		AudioListener.volume = Mathf.MoveTowards(AudioListener.volume, 1f, m_PlayerVitalsAudio.EarRingVolumeGainSpeed * Time.deltaTime);
+		zombie.Scream.AddListener(PlayScream);
 	}
 
 	private void OnChanged_Health(float health)
@@ -103,8 +109,8 @@ public class ZombieAudio : ZombieComponent
 		{
 			if (Time.time > m_NextTimeCanScream)
 			{
-				m_PlayerVitalsAudio.HurtAudio.Play(ItemSelection.Method.RandomExcludeLast, m_AudioSource);
-				m_NextTimeCanScream = Time.time + m_PlayerVitalsAudio.TimeBetweenScreams;
+				m_ZombieVitalsAudio.HurtAudio.Play(ItemSelection.Method.RandomExcludeLast, m_AudioSource);
+				m_NextTimeCanScream = Time.time + m_ZombieVitalsAudio.TimeBetweenScreams;
 			}
 		}
 	}
@@ -115,12 +121,20 @@ public class ZombieAudio : ZombieComponent
 		{
 			SurfaceEffects footstepEffect = SurfaceEffects.SoftFootstep;
 
-			float volumeFactor = m_PlayerFootsteps.WalkVolume;
+			float volumeFactor = m_ZombieFootsteps.WalkVolume;
 
 			RaycastHit hitInfo;
-
 			if (CheckGround(out hitInfo))
 				SurfaceManager.SpawnEffect(hitInfo, footstepEffect, volumeFactor);
+		}
+	}
+
+	private void PlayScream()
+    {
+		if (Time.time > m_NextTimeCanScreamAngry)
+		{
+			m_ZombieScreams.ScreamAudio.Play(ItemSelection.Method.RandomExcludeLast, m_AudioSource);
+			m_NextTimeCanScreamAngry = Time.time + m_ZombieScreams.TimeBetweenScreams;
 		}
 	}
 
@@ -128,6 +142,6 @@ public class ZombieAudio : ZombieComponent
 	{
 		Ray ray = new Ray(transform.position + Vector3.up * 0.1f, Vector3.down);
 
-		return Physics.Raycast(ray, out hitInfo, m_PlayerFootsteps.RaycastDistance, m_PlayerFootsteps.GroundMask, QueryTriggerInteraction.Ignore);
+		return Physics.Raycast(ray, out hitInfo, m_ZombieFootsteps.RaycastDistance, m_ZombieFootsteps.GroundMask, QueryTriggerInteraction.Ignore);
 	}
 }

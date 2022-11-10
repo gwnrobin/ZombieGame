@@ -36,7 +36,8 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2225
-  stringTagMap: {}
+  stringTagMap:
+    MotionVector: User
   disabledShaderPasses:
   - RayTracingPrepass
   - TransparentDepthPrepass
@@ -283,6 +284,7 @@ Material:
     - _LineDetailContrast: 1
     - _LineSize: 0.25
     - _LineTransparency: 0.77
+    - _Line_Speed: 1
     - _LinesSpeed: 1
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
@@ -353,12 +355,14 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     - __dirty: 0
+    - _thickness: 0.1
+    - _tranparancy: 1
     m_Colors:
     - _ASEOutlineColor: {r: 0.9339623, g: 0.79484177, b: 0.6035511, a: 1}
     - _AlbedoTint: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 2.065485, g: 1.642061, b: 0.6196455, a: 0}
     - _ColorTint: {r: 0.9433962, g: 0.8842922, b: 0.7965468, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}

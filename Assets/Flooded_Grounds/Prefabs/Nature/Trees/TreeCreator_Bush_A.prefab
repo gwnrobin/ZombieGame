@@ -382,7 +382,7 @@ Material:
     - _DstBlend: 0
     - _EnableBlendModePreserveSpecularLighting: 1
     - _EnableFogOnTransparent: 1
-    - _Glossiness: 0.431
+    - _Glossiness: 0
     - _HueVariationKwToggle: 1
     - _Metallic: 0
     - _NormalMapKwToggle: 0
