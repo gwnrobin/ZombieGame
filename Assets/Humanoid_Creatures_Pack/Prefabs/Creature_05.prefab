@@ -2523,7 +2523,14 @@ MonoBehaviour:
   - {fileID: 7278602291485254944}
   - {fileID: 3706493746996967806}
   m_Inventory: {fileID: 0}
+  HitMask:
+    serializedVersion: 2
+    m_Bits: 0
   target: {fileID: 0}
+  attackOrigin: {fileID: 0}
+  navMeshAgent: {fileID: 0}
+  animator: {fileID: 0}
+  view: {fileID: 0}
   rigidbodies:
   - {fileID: 7306578665549440656}
   - {fileID: 9011430047894507509}
@@ -2536,6 +2543,13 @@ MonoBehaviour:
   - {fileID: 1021057228994794929}
   - {fileID: 1181500006174651795}
   - {fileID: 618554066218598901}
+  normalDetectRange: 10
+  wanderRadius: 10
+  wanderSpeed: 0
+  runSpeed: 0
+  seePlayer: 0
+  playerLostAfterSeconds: 3
+  viewAngle: 130
 --- !u!195 &3075847623718753942
 NavMeshAgent:
   m_ObjectHideFlags: 0

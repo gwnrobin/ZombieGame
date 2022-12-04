@@ -63,16 +63,22 @@ public class ZombieAudio : ZombieComponent
 	}
 
 	[Serializable]
-	private struct ZombieScreamAudio
+	private struct ZombieAggressive
     {
-		[BHeader("Scream", false)]
+		[BHeader("Aggresive", false)]
 
 		[Group]
-		[Tooltip("The sounds that will be played when this entity receives damage.")]
+		[Tooltip("The sounds that will be played when this entity sees a target.")]
 		public SoundPlayer ScreamAudio;
+
+		[Group]
+		[Tooltip("The sounds that will be played when this entity attack.")]
+		public SoundPlayer attackAudio;
 
 		[SerializeField]
 		public float TimeBetweenScreams;
+		[SerializeField]
+		public float TimeBetweenAttack;
 	}
 
 	[SerializeField]
@@ -85,10 +91,11 @@ public class ZombieAudio : ZombieComponent
 	private ZombieFootstepsAudio m_ZombieFootsteps = new ZombieFootstepsAudio();
 
 	[SerializeField, Group]
-	private ZombieScreamAudio m_ZombieScreams = new ZombieScreamAudio();
+	private ZombieAggressive m_ZombieAggresive = new ZombieAggressive();
 
 	private float m_NextTimeCanScream;
 	private float m_NextTimeCanScreamAngry;
+	private float m_NextTimeCanAttack;
 
 	private void Start()
 	{
@@ -99,6 +106,8 @@ public class ZombieAudio : ZombieComponent
 		zombie.Health.AddChangeListener(OnChanged_Health);
 
 		zombie.Scream.AddListener(PlayScream);
+
+		zombie.Attack.AddListener(PlayAttack);
 	}
 
 	private void OnChanged_Health(float health)
@@ -131,10 +140,19 @@ public class ZombieAudio : ZombieComponent
 
 	private void PlayScream()
     {
+		if (Time.time > m_NextTimeCanAttack)
+		{
+			m_ZombieAggresive.ScreamAudio.Play(ItemSelection.Method.RandomExcludeLast, m_AudioSource);
+			m_NextTimeCanScream = Time.time + m_ZombieAggresive.TimeBetweenScreams;
+		}
+	}
+
+	private void PlayAttack()
+	{
 		if (Time.time > m_NextTimeCanScreamAngry)
 		{
-			m_ZombieScreams.ScreamAudio.Play(ItemSelection.Method.RandomExcludeLast, m_AudioSource);
-			m_NextTimeCanScreamAngry = Time.time + m_ZombieScreams.TimeBetweenScreams;
+			m_ZombieAggresive.attackAudio.Play(ItemSelection.Method.RandomExcludeLast, m_AudioSource);
+			m_NextTimeCanAttack = Time.time + m_ZombieAggresive.TimeBetweenAttack;
 		}
 	}
 

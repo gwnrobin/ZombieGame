@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class ZombieAI : Entity
 {
     public readonly Message Scream = new Message();
+    public readonly Message Attack = new Message();
 
     public LayerMask HitMask = new LayerMask();
 
@@ -176,7 +177,7 @@ public class ZombieAI : Entity
         {
             r.isKinematic = false;
             navMeshAgent.enabled = false;
-            GetComponent<Animator>().enabled = false;
+            animator.enabled = false;
         }
     }
 }
